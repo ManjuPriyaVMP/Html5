@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <style>
+    body{
+    background-color: antiquewhite;
+}
+
+#dragStart{
+    background-color: peachpuff;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    border:4px solid red;
+}
+
+#dragStop{
+    background-color: burlywood;
+    width: 300px;
+    height: 200px;
+    float: right;
+    margin-right: 200px;
+    border: 4px dashed green;
+}
+</style>
     <title>Drag And Drop</title>
 </head>
 <body>
     <h1>Drag and Drop</h1>
     <div id="dragStart"
-         ondragover="sourceDivDragOver(event)">
+         ondragover="sourceDivDragOver(event)"  ondrop="dropImageNow(event)"
+         ondragover="targetDivDragOver(event)">
         <img src="d:/Mju/DragDrop/logo.jpg"
              width="200px" 
              id="dragImage"
@@ -21,7 +43,9 @@
 
     <div id="dragStop"
          ondrop="dropImageNow(event)"
-         ondragover="targetDivDragOver(event)"   >
+         ondragover="targetDivDragOver(event)" 
+             ondragstart="dragImageNow(event)" 
+              >
         Drop CTS over here!
     </div>
     
