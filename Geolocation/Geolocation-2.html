@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geolocation - Get Instant location detector</title>
+</head>
+<body>
+    <h4>Locator Detector - Update Instantly</h4>
+    <span>Get my location </span>
+    <button onclick="fetchlocation()">Location Checkor</button> &nbsp;
+  <div id = "locator"></div>  
+  <script>
+      var locatorRef = document.getElementById("locator")
+      fetchlocation= function(){
+          navigator.geolocation.watchPosition(successcallbackfunction)
+       //   navigator.geolocation.getCurrentPosition(successcallbackfunction)
+      }
+      successcallbackfunction=function(location){
+        locatorRef.innerHTML = "Latitude" + location.coords.latitude + " " +"Longitude" + location.coords.longitude;   
+      }
+     
+  </script>
+</body>
+</html>
